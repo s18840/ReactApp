@@ -1,0 +1,42 @@
+
+.item-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+
+    .item-icon {
+        color: black;
+        background-color: rgba(95, 95, 228, 0.586);
+        border-radius: 45px;
+        padding: 10px;
+
+        &:hover {
+            color: white;
+            background-color: rgba(42, 42, 226, 0.586);
+        }
+    }
+
+    .item-name {
+        background-color: rgba(221, 154, 154, 0.615);
+        border-radius: 45px;
+        padding: 10px;
+
+        &:hover {
+            color: white;
+            background-color: rgba(216, 102, 102, 0.615);
+        }
+    }
+
+    .item-checkbox-container {
+        background-color: green;
+        border-radius: 45px;
+        padding: 10px;
+
+        .item-checkbox {
+            color: white;
+            outline: 2px solid red;
+        }
+    }
+}
