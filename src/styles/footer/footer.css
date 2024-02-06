@@ -1,0 +1,7 @@
+.footer {
+    background-color: rgb(69, 167, 167);
+    font-family: "ProtestRiot";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

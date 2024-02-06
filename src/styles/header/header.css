@@ -1,0 +1,7 @@
+.header {
+    background-color: aqua;
+    font-family: "ProtestRiot";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
