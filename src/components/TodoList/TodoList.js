@@ -12,7 +12,6 @@ function ToDolist({ todos, addTodo }) {
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
-        console.log("Handled input change")
     };
 
     //to add handle icon change after clicking chevron
@@ -22,18 +21,24 @@ function ToDolist({ todos, addTodo }) {
 
     const handleAddTodo = () => {
         if (inputValue.trim() !== "") {
-            addTodo(inputValue.trim(), iconValue.trim());
+            addTodo(inputValue.trim(), iconValue.trim() || "FaPaperclip");
             setInputValue("");
             setIconValue("");
-            console.log("Handled add todo: " + inputValue)
+            console.log("Handled add todo: " + inputValue);
         }
     };
 
     return (
         <div className="main-container">
-            <TodoItem iconName={"FaClock"} itemName={"Wake up"} />
-            <TodoItem iconName={"FaHamburger"} itemName={"Eat breakfast"} />
-            <TodoItem iconName={"FaShower"} itemName={"Take a shower"} />
+            <div>
+                {todos.map((todo, index) => (
+                    <TodoItem
+                        key={index}
+                        iconName={todo.iconName}
+                        itemName={todo.itemName}
+                    />
+                ))}
+            </div>
             <div className="add-new-item-container">
                 <div
                     className={`add-new-icon ${
@@ -46,20 +51,18 @@ function ToDolist({ todos, addTodo }) {
                 >
                     <FaChevronDown />
                 </div>
-                <input
-                    value={inputValue}
-                    type="text"
-                    placeholder="Enter a todo here..."
-                    onChange={handleInputChange}
-                />
+                <div>
+                    <input
+                        className="input"
+                        value={inputValue}
+                        type="text"
+                        placeholder="Enter a todo here..."
+                        onChange={handleInputChange}
+                    />
+                </div>
                 <div className="item-round-button" onClick={handleAddTodo}>
                     <FaPlusCircle className="item-icon-white" />
                 </div>
-            </div>
-            <div>
-                {todos.map((todo, index) => {
-                    <TodoItem key={index} iconName={"FaClock"} itemName={todo.itemName} />;
-                })}
             </div>
         </div>
     );
@@ -67,10 +70,10 @@ function ToDolist({ todos, addTodo }) {
 
 const mapStateToProps = (state) => ({
     todos: state.todos,
-  });
-  
-  const mapDispatchToProps = {
+});
+
+const mapDispatchToProps = {
     addTodo,
-  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDolist);

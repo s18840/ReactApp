@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../styles/TodoList/TodoItem.css";
-import { FaShower, FaClock, FaHamburger } from "react-icons/fa";
+import { FaShower, FaClock, FaHamburger, FaPaperclip  } from "react-icons/fa";
 //icons link
 //https://react-icons.github.io/react-icons/icons/fa/
 
@@ -13,6 +13,8 @@ function chooseIcon(icon) {
         return <FaShower className="item-icon" />;
     } else if (icon === "FaHamburger") {
         return <FaHamburger className="item-icon" />;
+    } else if (icon === "FaPaperclip") {
+        return <FaPaperclip className="item-icon" />
     }
 }
 
@@ -22,7 +24,7 @@ function TodoItem(props) {
 
     return (
         <div className="item-container">
-            {chooseIcon(icon)}
+            <div className="icon-container">{chooseIcon(icon)}</div>
             <div className="item-name"> {props.itemName} </div>
             <label className="item-round-button">
                 <input
