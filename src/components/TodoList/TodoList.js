@@ -19,9 +19,27 @@ function ToDolist({ todos, addTodo }) {
         setIconValue(event.target.value);
     };
 
+    const randomIcon = () => {
+        const arrayIcons = [
+            "FaBolt",
+            "FaCamera",
+            "FaCoffee",
+            "FaCompass",
+            "FaDice",
+            "FaEnvelope",
+            "FaFire",
+            "FaGlobe",
+            "FaHeart",
+            "FaKey",
+            "FaUmbrella"];
+        const randomIndex = Math.floor(Math.random() * arrayIcons.length);
+        
+        return arrayIcons[randomIndex];
+    }
+
     const handleAddTodo = () => {
         if (inputValue.trim() !== "") {
-            addTodo(inputValue.trim(), iconValue.trim() || "FaPaperclip");
+            addTodo(inputValue.trim(), iconValue.trim() || randomIcon());
             setInputValue("");
             setIconValue("");
             console.log("Handled add todo: " + inputValue);

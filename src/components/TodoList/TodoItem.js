@@ -1,20 +1,56 @@
 import { useState } from "react";
 import "../../styles/TodoList/TodoItem.css";
-import { FaShower, FaClock, FaHamburger, FaPaperclip  } from "react-icons/fa";
+import {
+    FaShower,
+    FaClock,
+    FaHamburger,
+    FaPaperclip,
+    FaBolt,
+    FaCamera,
+    FaCoffee,
+    FaCompass,
+    FaDice,
+    FaEnvelope,
+    FaFire,
+    FaGlobe,
+    FaHeart,
+    FaKey,
+    FaUmbrella
+} from "react-icons/fa";
 //icons link
 //https://react-icons.github.io/react-icons/icons/fa/
 
 function chooseIcon(icon) {
-    if (icon === "FaShower ") {
+    if (icon === "FaShower") {
         return <FaShower className="item-icon" />;
     } else if (icon === "FaClock") {
         return <FaClock className="item-icon" />;
-    } else if (icon === "FaShower") {
-        return <FaShower className="item-icon" />;
     } else if (icon === "FaHamburger") {
         return <FaHamburger className="item-icon" />;
     } else if (icon === "FaPaperclip") {
-        return <FaPaperclip className="item-icon" />
+        return <FaPaperclip className="item-icon" />;
+    } else if (icon === "FaBolt") {
+        return <FaBolt className="item-icon" />;
+    } else if (icon === "FaCamera") {
+        return <FaCamera className="item-icon" />;
+    } else if (icon === "FaCoffee") {
+        return <FaCoffee className="item-icon" />;
+    } else if (icon === "FaCompass") {
+        return <FaCompass className="item-icon" />;
+    } else if (icon === "FaDice") {
+        return <FaDice className="item-icon" />;
+    } else if (icon === "FaEnvelope") {
+        return <FaEnvelope className="item-icon" />;
+    } else if (icon === "FaFire") {
+        return <FaFire className="item-icon" />;
+    } else if (icon === "FaGlobe") {
+        return <FaGlobe className="item-icon" />;
+    } else if (icon === "FaHeart") {
+        return <FaHeart className="item-icon" />;
+    } else if (icon === "FaKey") {
+        return <FaKey className="item-icon" />;
+    } else if (icon === "FaUmbrella") {
+        return <FaUmbrella className="item-icon" />;
     }
 }
 
