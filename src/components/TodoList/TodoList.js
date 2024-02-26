@@ -79,7 +79,7 @@ function ToDolist({ todos, addTodo, removeTodo, moveTodo }) {
                                 status={todo.status}
                                 progress={todo.progress}
                                 index={todo.index}
-                                moveTodo={(newProgress) =>
+                                moveTodo={
                                     handleMoveTodo(todo.index, "In Progress")
                                 }
                             />
@@ -124,7 +124,7 @@ function ToDolist({ todos, addTodo, removeTodo, moveTodo }) {
                                 status={todo.status}
                                 progress={todo.progress}
                                 index={index}
-                                moveTodo={(newProgress) =>
+                                moveTodo={
                                     handleMoveTodo(todo.index, "Done")
                                 }
                             />

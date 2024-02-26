@@ -84,8 +84,8 @@
             }
 
             .input-error {
-                border: 2px solid red;
-                background-color: lightcoral;
+                border: 2px solid var(--main_color);
+                background-color: var(--error)
             }
         }
     
