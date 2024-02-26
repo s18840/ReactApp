@@ -6,6 +6,10 @@
     height: 100px;
     font-family: "Pacifico";
 
+    .icon-container {
+        margin-top: 8px;
+    }
+
     .item-icon {
         color: var(--black);
         background-color: var(--main_color);

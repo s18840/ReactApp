@@ -55,23 +55,35 @@ function chooseIcon(icon) {
 }
 
 function TodoItem(props) {
-    const icon = props.iconName;
-    const [isChecked, setIsChecked] = useState(false);
+    const {iconName, itemName, status, index, progress, removeTodo, moveTodo} = props;
+
+    const handleCheckboxChange = () => {
+        console.log("Handle " + index)
+        if(!status){
+            console.log(progress)
+            if(progress === "New"){
+                moveTodo(index, "In Progress"); // Move to "In Progress"
+            } else if (progress === "In Progress") {
+                moveTodo(index, "Done");
+            } else if (progress === "Done"){
+                console.log("Remove")
+                removeTodo(index);
+            }
+        }
+    }
 
     return (
         <div className="item-container">
-            <div className="icon-container">{chooseIcon(icon)}</div>
-            <div className="item-name"> {props.itemName} </div>
+            <div className="icon-container">{chooseIcon(iconName)}</div>            
+            <div className="item-name"> {itemName} </div>
             <label className="item-round-button">
                 <input
                     type="checkbox"
-                    onChange={() => {
-                        setIsChecked(!isChecked);
-                    }}
+                    onChange={handleCheckboxChange}
                 />
                 <svg
                     className={`checkbox ${
-                        isChecked ? "checkbox--active" : ""
+                        status ? "checkbox--active" : ""
                     }`}
                     aria-hidden="true"
                     viewBox="0 0 15 11"
@@ -80,7 +92,7 @@ function TodoItem(props) {
                     <path
                         d="M1 4.5L5 9L14 1"
                         strokeWidth="2"
-                        stroke={isChecked ? "#fff" : "none"}
+                        stroke={status ? "#fff" : "none"}
                     />
                 </svg>
             </label>
